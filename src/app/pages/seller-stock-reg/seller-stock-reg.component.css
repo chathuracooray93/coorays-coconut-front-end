@@ -1,0 +1,46 @@
+.gradient-custom-3 {
+    background-image: url('/assets/coconut-back.webp');
+    
+    /* fallback for old browsers */
+    background: #84fab0;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
+    }
+    .gradient-custom-4 {
+    /* fallback for old browsers */
+    background: #84fab0;
+    
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
+    
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+    }
+
+    .fit-image {
+        width: 100%;
+        height: auto;
+        background-size: cover; /* Cover the entire container */
+  background-position: center; /* Center the image */
+  width: 100vw; /* 100% of the viewport width */
+  height: 100vh; /* 100% of the viewport height */
+      }
+
+      .bg-image{
+      
+        background-image: url("/assets/coconut-back.jpg");
+        background-size: cover; background-repeat: no-repeat; background-position: center;
+      }
+      
+      .small-font {
+        font-size: 0.875rem; /* Adjust as needed */
+      }
+
+      .back-color{
+        background-color: #5ef872;
+      }
+      

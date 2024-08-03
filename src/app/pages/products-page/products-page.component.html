@@ -1,0 +1,153 @@
+<div class="back-color">
+  <app-navbar></app-navbar>
+  <br><br><br><br>
+  <div class="container row">
+    <div class="col">
+      <button type="button" class="btn btn-primary" routerLink="/login"><i class="bi bi-arrow-left"></i>Back</button>
+    </div>
+  </div>
+  <div class="container-fluid products">
+    <p class="text-center fw-bold fs-2">Coconut Lots</p>
+    <div class="row text-end">
+      <div class="col">
+        <button class="btn btn-success me-3 shadow" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button>
+        <button class="btn btn-secondary shadow" routerLink="/orders">View Orders</button>
+      </div>
+    </div>
+    <div class="row p-3 gy-3">
+      <div *ngFor="let card of coconutLots" class="col-lg-6 col-sm-12 mx-auto">
+        <div class="card border border-2">
+          <img src="{{card.lot_image}}" class="card-img">
+          <div class="card-img-overlay">
+            <p class="card-subtitle fs-5 fw-semibold text-white"></p>
+            <a href="" data-bs-toggle="modal" (click)="setValue(card)" data-bs-target="#productsModal"
+              class="btn btn-outline-light detail-btn btn-sm">More Details</a>
+          </div>
+          <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item">{{card.seller.username}}</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="modal fade" id="productsModal" tabindex="-1" aria-labelledby="imageCarouselModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="imageCarouselModalLabel">Coconut Lot Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <!-- Carousel -->
+          <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="5" aria-label="Slide 6"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="6" aria-label="Slide 7"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <p class="fw-bold">Whole Lot</p>
+                <img src="{{selectedLot?.lot_image}}" class="d-block w-100 carousel-img" alt="First Slide">
+              </div>
+              <div class="carousel-item">
+                <p class="fw-bold">Husk Coconut</p>
+                <img src="{{selectedLot?.type_1}}" class="d-block w-100 carousel-img" alt="Second Slide">
+              </div>
+              <div class="carousel-item">
+                <p class="fw-bold">Half Fish Coconut</p>
+                <img src="{{selectedLot?.type_2}}" class="d-block w-100 carousel-img" alt="Third Slide">
+              </div>
+              <div class="carousel-item">
+                <p class="fw-bold">Fish Coconut</p>
+                <img src="{{selectedLot?.type_3}}" class="d-block w-100 carousel-img" alt="Fourth Slide">
+              </div>
+              <div class="carousel-item">
+                <p class="fw-bold">Wet Coconut</p>
+                <img src="{{selectedLot?.wet_coconut}}" class="d-block w-100 carousel-img" alt="Fifth Slide">
+              </div>
+              <div class="carousel-item">
+                <p class="fw-bold">Dry Coconut</p>
+                <img src="{{selectedLot?.dry_coconut}}" class="d-block w-100 carousel-img" alt="Sixth Slide">
+              </div>
+              <div class="carousel-item">
+                <p class="fw-bold">Inside View</p>
+                <img src="{{selectedLot?.inside_image}}" class="d-block w-100 carousel-img" alt="Seventh Slide">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon bg-dark" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon bg-dark" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+
+        </div>
+        <hr>
+        <p class="fw-bold fs-5 ms-4">Details</p>
+        <ul class="">
+          <li>Average Width - {{selectedLot?.width}}</li>
+          <li>Average Size - {{selectedLot?.size}}</li>
+          <li>Inside - {{selectedLot?.inside_state}}</li>
+          <li>Husk - {{selectedLot?.husk_state}}</li>
+          <li>Moisture - {{selectedLot?.moisture_state}}</li>
+          <li class="fw-bold">Quantity - {{selectedLot?.quantity}}</li>
+        </ul>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-success ml-4" >Review</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <button class="btn btn-primary floating-button shadow" data-bs-toggle="modal" data-bs-target="#newOrderModal">Add Order</button> -->
+
+  <div class="modal fade" id="newOrderModal" tabindex="-1" aria-labelledby="inputModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="inputModalLabel">Input Data</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="createOrder()">
+            <div class="mb-3">
+              <label for="type" class="form-label">Select Type</label>
+              <select name="size" id="type" class="form-control form-control small-font">
+                <option value="" disabled selected>Select Size</option>
+                <option value="dry">Dry</option>
+                <option value="wet">Wet</option>
+                <option value="husk">Husk Coconut</option>
+                <option value="half-fish">Half Fish Coconut</option>
+                <option value="fish">Fish Coconut</option>
+              </select>
+
+            </div>
+            <div class="mb-3">
+              <label for="buyingPrice" class="form-label">Buying Price</label>
+              <input type="number" class="form-control" id="buyingPrice" [(ngModel)]="newOrder.buying_price" name="buying_price" required>
+            </div>
+            <div class="mb-3">
+              <label for="buyingQuantity" class="form-label">Buying Quantity</label>
+              <input type="number" class="form-control" id="buyingQuantity" [(ngModel)]="newOrder.buying_quantity" name="buying_quantity" required>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Place Order</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+.payment-card {
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.payment-card .btn {
+  width: 100px;
+}
+
+.bg-color{
+  background-color: #b0fbba;
+  height: 100vh;
+}

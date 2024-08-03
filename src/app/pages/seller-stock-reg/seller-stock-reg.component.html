@@ -1,0 +1,125 @@
+<div class="container-fluid gradient-custom-3 mt-5">
+  <div class="vh-100 bg-image mt-5 fit-image">
+    <app-navbar></app-navbar>
+    <br><br>
+    <div class="container row">
+      <div class="col-3">
+        <button type="button" class="btn btn-primary" (click)="goBack()"><i class="bi bi-arrow-left"></i> Back</button>
+      </div>
+    </div>
+    <div class="mask d-flex align-items-center mt-3">
+      <div class="container-fluid">
+
+        <div class="row justify-content-center align-items-center">
+          <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+            <div class="card" style="border-radius: 15px;">
+              <div class="card-body p-5">
+                <h2 class="text-uppercase text-center mb-5">Coconut Lot Details</h2>
+                <form class="row g-5" (ngSubmit)="onSubmit()">
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="number" name="width" [(ngModel)]="coconutLot.width" id="form3ExampleWidth" class="form-control form-control-lg small-font" />
+                      <label class="form-label" for="form3ExampleWidth">Width</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <select name="size" [(ngModel)]="coconutLot.size" id="form3ExampleSize" class="form-control form-control-lg small-font">
+                        <option value="" disabled selected>Select Size</option>
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                      </select>
+                      <label class="form-label" for="form3ExampleSize">Size</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <select name="husk" [(ngModel)]="coconutLot.husk_state" id="form3ExampleHuskState" class="form-control form-control-lg small-font">
+                        <option value="" disabled selected>Select Husk State</option>
+                        <option value="husk">Husk</option>
+                        <option value="huskless">Huskless</option>
+                      </select>
+                      <label class="form-label" for="form3ExampleHuskState">Husk State</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <select name="moisture_state" [(ngModel)]="coconutLot.moisture_state" id="form3ExampleMoistureState" class="form-control form-control-lg small-font">
+                        <option value="" disabled selected>Select Moisture State</option>
+                        <option value="wet">Wet</option>
+                        <option value="dry">Dry</option>
+                      </select>
+                      <label class="form-label" for="form3ExampleMoistureState">Moisture State</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <select name="inside_state" [(ngModel)]="coconutLot.inside_state" id="form3ExampleInsideState" class="form-control form-control-lg small-font">
+                        <option value="" disabled selected>Select Inside State</option>
+                        <option value="with_water">With Water</option>
+                        <option value="without_water">Without Water</option>
+                      </select>
+                      <label class="form-label" for="form3ExampleInsideState">Inside State</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" name="lot_image" (change)="onFileSelected($event, 'lot_image')" id="form3ExampleLotImage" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleLotImage">Lot Image</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" name="type_1" (change)="onFileSelected($event, 'type_1')" id="form3ExampleType1" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleType1">Type 1</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" name="type_2" (change)="onFileSelected($event, 'type_2')" id="form3ExampleType2" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleType2">Type 2</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" name="type_3" (change)="onFileSelected($event, 'type_3')" id="form3ExampleType3" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleType3">Type 3</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" name="wet_coconut" (change)="onFileSelected($event, 'wet_coconut')" id="form3ExampleWetCoconut" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleWetCoconut">Wet Coconut</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" name="dry_coconut" (change)="onFileSelected($event, 'dry_coconut')" id="form3ExampleDryCoconut" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleDryCoconut">Dry Coconut</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="file" name="inside_image" (change)="onFileSelected($event, 'inside_image')" id="form3ExampleInsideImage" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                      <label class="form-label" for="form3ExampleInsideImage">Inside Image</label>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div data-mdb-input-init class="form-outline">
+                      <input type="number" name="quantity" [(ngModel)]="coconutLot.quantity" id="form3ExampleQuantity" class="form-control form-control-lg" />
+                      <label class="form-label" for="form3ExampleQuantity">Quantity</label>
+                    </div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-center">
+                    <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Submit</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

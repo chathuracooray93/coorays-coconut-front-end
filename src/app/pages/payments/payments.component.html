@@ -1,0 +1,91 @@
+
+<div class="container-fluid bg-color">
+  <div class="text-start p-3"><button class="btn btn-primary" (click)="goBack()">Back</button></div>
+  <div class="container mt-5">
+    <div class="payment-card bg-light">
+      <h4 class="mb-3">ORDER OVERVIEW</h4>
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <p class="mb-0">PLEASE SELECT A PAYMENT METHOD</p>
+        <select name="size"  id="form3ExampleSize" class="form-control form-control-lg small-font">
+          <option value="" disabled selected>Please select</option>
+          <option value="small">Manual</option>
+          <option value="medium">Online Transfer</option>
+          <option value="large">Credit / Debit Card</option>
+        </select>
+      </div>
+      <h5>CREDIT / DEBIT CARD</h5>
+      <form>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="firstName">First name <span class="text-muted">(Optional)</span></label>
+            <input type="text" class="form-control" id="firstName" placeholder="John">
+          </div>
+          <div class="form-group col-md-6">
+            <label for="lastName">Last name</label>
+            <input type="text" class="form-control" id="lastName" placeholder="Doe">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-8">
+            <label for="cardNumber">Card number</label>
+            <input type="text" class="form-control" id="cardNumber" placeholder="•••• •••• •••• ••••">
+          </div>
+          <div class="form-group col-md-4">
+            <label for="cvv">CVV</label>
+            <input type="text" class="form-control" id="cvv" placeholder="•••">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="expirationMonth">Valid until</label>
+            <select class="form-control" id="expirationMonth">
+              <option>Month</option>
+              <option>01</option>
+              <option>02</option>
+              <option>03</option>
+              <option>04</option>
+              <option>05</option>
+              <option>06</option>
+              <option>07</option>
+              <option>08</option>
+              <option>09</option>
+              <option>10</option>
+              <option>11</option>
+              <option>12</option>
+            </select>
+          </div>
+          <div class="form-group col-md-6">
+            <label for="expirationYear">&nbsp;</label>
+            <select class="form-control" id="expirationYear">
+              <option>Year</option>
+              <option>2024</option>
+              <option>2025</option>
+              <option>2026</option>
+              <option>2027</option>
+              <option>2028</option>
+              <option>2029</option>
+              <option>2030</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Accepted Cards</label>
+          <div>
+            <img src="https://img.icons8.com/color/48/000000/visa.png" alt="Visa">
+            <img src="https://img.icons8.com/color/48/000000/mastercard.png" alt="MasterCard">
+            <img src="https://img.icons8.com/color/48/000000/amex.png" alt="American Express">
+            <img src="https://img.icons8.com/color/48/000000/discover.png" alt="Discover">
+            <img src="https://img.icons8.com/color/48/000000/jcb.png" alt="JCB">
+            <img src="https://img.icons8.com/color/48/000000/maestro.png" alt="Maestro">
+            <!-- Add more icons as needed -->
+          </div>
+        </div>
+        <div class="d-flex justify-content-between">
+          <button type="button" class="btn btn-secondary">Cancel</button>
+          <button class="btn btn-sm btn-primary">Print Reciept</button>
+          <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

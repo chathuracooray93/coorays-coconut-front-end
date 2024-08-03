@@ -1,0 +1,109 @@
+<div class="container-fluid back-color">
+  <app-navbar></app-navbar>
+  <br><br><br>
+  <div class=" container row">
+
+    <div class="col-3">
+      <button type="button" class="btn btn-primary " routerLink="/login"><i class="bi bi-arrow-left"></i>Back</button>
+    </div>
+  </div>
+  <div class="container-fluid products">
+    <p class="text-center fw-bold fs-3 ">Company Orders</p>
+    <div class="text-end">
+      <button class="btn btn-success me-3" routerLink="/lots">View Lots</button>
+      <button class="btn btn-warning shadow" (click)="goToCreateLot()">Add Coconut Lot</button></div>
+    <div class="row p-3 gy-3">
+      <div *ngFor="let card of companies" class="col-lg-3 p-3 mx-auto col-sm-12">
+        <div class="card border  border-2 shadow">
+          <img src="{{card.company.br_image}}" class="card-img">
+          <div class="card-img-overlay">
+            <p class="card-subtitle fs-5 fw-semibold text-white text-center"></p>
+            <a href="" data-bs-toggle="modal" data-bs-target="#products-modal" (click)="setValue(card)"
+              class="btn btn-outline-light detail-btn btn-sm">More Details</a>
+          </div>
+          <ul class="list-group list-group-flush text-center">
+            <li class="list-group-item">{{card.company.company_name}}</li>
+          </ul>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <div class="modal fade modal-centered" id="products-modal" data-bs-backdrop="static" data-bs-keyboard="false"
+    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="staticBackdropLabel">{{selectedOrder?.product_name}}</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="fs-5 fw-bolder">Details</p>
+          <ul>
+            <li>Username:- {{selectedOrder?.company.username}}</li>
+            <li>Br:- {{selectedOrder?.company.br}}</li>
+            <li>Phone Number:- {{selectedOrder?.company.phone_number}}</li>
+            <li>Address:- {{selectedOrder?.company.address}}</li>
+            <li><button class="btn btn-primary btn-sm" data-bs-toggle="modal" data-bs-target="#br-modal">View
+                BR</button></li>
+          </ul>
+          <p class="fs-5 bolder fw-bold">Quantity:- {{selectedOrder?.buying_quantity}}</p>
+          <hr>
+          <p class="fs-5 bolder fw-bold">Price per:- Rs.{{selectedOrder?.buying_price}}</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button class="btn btn-danger" (click)="deleteOrder()">Reject</button>
+          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#sellModal">Sell</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal fade modal-centered" id="br-modal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="brModallLabel">Image of Br</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body text-center">
+          <img src="{{selectedOrder?.company.br_image}}" alt="" style="max-width: 300px; max-height: 300px;">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+            data-bs-target="#products-modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="sellModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Sell Product</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form (ngSubmit)="sellCoconut()">
+            <label class="fw-bold" for="qtyInput">Enter quantity to sell</label>
+            <input [(ngModel)]="sellingQty" name="qty" id="qtyInput" type="number" class="form-control"
+              placeholder="Quantity" required>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#products-modal"
+                data-bs-dismiss="modal">Close</button>
+              <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Confirm Selling</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- <button class="btn btn-primary floating-button shadow" (click)="goToCreateLot()">Add Coconut Lot</button> -->
+</div>

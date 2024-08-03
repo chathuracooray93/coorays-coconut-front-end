@@ -1,0 +1,23 @@
+<app-navbar></app-navbar>
+<br><br><br><br>
+<button class="btn btn-primary ms-3" (click)="goBack()">Back</button>
+<table class="table table-striped mt-5">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Seller Name</th>
+      <th>Lot Quantity</th>
+      <th>Delete</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let lot of lots">
+      <td>{{lot._id}}</td>
+      <td>{{lot.seller.username}}</td>
+      <td>{{lot.quantity}}</td>
+      <td><button class="btn btn-danger" (click)="deleteLot(lot._id)">Delete</button></td>
+      <td><button class="btn btn-warning">Edit</button></td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,101 @@
+.products{
+  margin-top: 100px;
+}
+
+.head-line{
+  color: #f3f3f3;
+  font-size: 60px;
+  font-weight: bolder;
+  background-color: #1ECB44;
+  border-radius: 9px;
+  width: 25vw;
+  margin-left: 150px;
+  margin-bottom: 100px !important;
+  position: relative;
+  margin-top: 100px !important;
+}
+
+.card {
+  position: relative;
+  border: none;
+  width: 40vw;
+}
+.card-img {
+  height: 500px;
+  width: 40vw;
+  object-fit: cover;
+  border-radius: 10px;
+}
+.card-img-overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #00eeff;
+  border-radius: 10px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.card:hover .card-img-overlay{
+  opacity: 1;
+  color: #f3f3f3 !important;
+
+}
+.card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+.detail-btn {
+  margin-top: 20px;
+  background-color: #00eeff;
+
+  text-align: center;
+  font-size: 20px;
+  font-weight: 600;
+}
+.container {
+  margin-top: 40px;
+}
+.detail-btn:hover {
+  background-color: #ffffff; /* Change this to your desired hover color */
+  border-color: #ffffff; /* Change the border color to match if necessary */
+  color: #00eeff;
+}
+
+.carousel-img{
+  min-height: 400px;
+  min-width: 800px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  color: #000 !important; /* Black color for control icons */
+}
+
+.floating-button{
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  z-index: 1000;
+}
+
+
+.back-color{
+  background-color: #ffe397;
+}
+
+#carouselExampleIndicators {
+  /* width: 700px;
+  height: 400px; */
+  overflow: hidden;
+}
+.carousel-item img {
+  width: 50vw; /* Make the image fill the width of the carousel */
+  height: 50vh; /* Make the image fill the height of the carousel */
+  object-fit: contain; /* Ensure the image covers the container without distortion */
+}

@@ -1,0 +1,101 @@
+
+<br><br><br><br>
+<div class=" container row">
+ 
+  <div class="col-3">
+    <button type="button" class="btn btn-primary " routerLink=""><i class="bi bi-arrow-left" ></i>Back</button>
+  </div>
+</div>
+<div class="container-fluid gradient-custom-3  mt-5 ">
+
+<div class="vh-100 bg-image mt-5 fit-image " style="">
+    <app-navbar></app-navbar>
+  <div class="mask d-flex align-items-center mt-5 ">
+    <div class="container">
+      <br><br><br>
+      <div class="row d-flex justify-content-center align-items-center">
+        <div class="col-12 col-md-9 col-lg-7 col-xl-6">
+          <div class="card" style="border-radius: 15px;">
+            <div class="card-body p-5">
+              <h2 class="text-uppercase text-center mb-5">Create an account</h2>
+
+              <form (ngSubmit)="onSubmit()" class="row g-3">
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input name="username" [(ngModel)]="company.username" type="text" id="form3ExampleUsername" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleUsername">Username</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input name="pw" [(ngModel)]="company.password" type="password" id="form3ExamplePassword" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExamplePassword">Password</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input name="name" [(ngModel)]="company.company_name" type="text" id="form3ExampleCompanyName" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleCompanyName">Company Name</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input name="br" [(ngModel)]="company.br" type="text" id="form3ExampleBR" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleBR">Business Registration Number</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input type="file" (change)="onFileChange($event)" id="form3ExampleBRImage" class="form-control form-control-lg" style="font-size: 0.875rem;" />
+                    <label class="form-label" for="form3ExampleBRImage">Business Registration Photo</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input name="email" [(ngModel)]="company.email" type="email" id="form3ExampleEmail" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleEmail">Your Email</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input name="addr" [(ngModel)]="company.address" type="text" id="form3ExampleAddress" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExampleAddress">Your Address</label>
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div data-mdb-input-init class="form-outline">
+                    <input name="phone" [(ngModel)]="company.phone_number" type="text" id="form3ExamplePhoneNumber" class="form-control form-control-lg" />
+                    <label class="form-label" for="form3ExamplePhoneNumber">Your Phone Number</label>
+                  </div>
+                </div>
+
+
+
+                <div class="col-12 d-flex justify-content-center">
+                  <button type="submit" data-mdb-button-init data-mdb-ripple-init class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                </div>
+
+                <div class="col-12 text-center text-muted mt-5 mb-0">
+                  Have already an account? <a routerLink="/login" class="fw-bold text-body"><u>Login here</u></a>
+                </div>
+                <br><br><br><br>
+
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>

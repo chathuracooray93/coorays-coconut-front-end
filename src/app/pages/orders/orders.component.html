@@ -1,0 +1,21 @@
+<app-navbar></app-navbar>
+<br><br><br><br>
+<button class="btn btn-primary ms-3" (click)="goBack()">Back</button>
+<table class="table table-striped mt-5">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Buying Price</th>
+      <th>Buying Quantity</th>
+      <th>Payment</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let order of orders">
+      <td>{{order._id}}</td>
+      <td>Rs.{{order.buying_price}}</td>
+      <td>{{order.buying_quantity}}</td>
+      <td><button class="btn btn-success" routerLink="/payment">Pay</button></td>
+    </tr>
+  </tbody>
+</table>
